@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="en" ng-app="hackApp" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <title>H4ckathon Javascript Challenge</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/docs.css" rel="stylesheet">
+    <link href="css/prettify.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+
+    <!--[if lte IE 8]>
+    <script>
+        document.createElement('tabs');
+        document.createElement('pane');
+    </script>
+    <![endif]-->
+
+</head>
+
+<body data-spy="scroll" data-target=".subnav" data-offset="100">
+<!-- Navbar -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="./index.html">TheForm</a>
+            <a href="./specs.html" class="btn btn-danger">H4ckathon Specs</a>
+        </div>
+    </div>
+</div>
+
+<div class="container" role="main">
+    <!-- Masthead -->
+    <header class="jumbotron subhead" id="overview">
+        <h1>H4ckathon Challenge Implementation</h1>
+
+        <p class="lead">Below lies the challenge implementation, codes and documentation</p>
+
+        <div class="subnav">
+            <ul class="nav nav-pills">
+                <li class=""><a href="#implementation">Multipage Form <span class="badge badge-success"><i
+                        class="icon-th-list icon-white"></i></span></a></li>
+                <li class=""><a href="#page1section">Page <span class="badge badge-warning">1</span></a></li>
+                <li class=""><a href="#page2section">Page <span class="badge badge-important">2</span></a></li>
+                <li class=""><a href="#page3section">Page <span class="badge badge-info">3</span></a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Implementation -->
+    <section id="implementation">
+        <div class="page-header">
+            <h1>Multipage Form
+                <small>3 pages of awesomeness</small>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="span8 offset2" ng-controller="MultiPageCtrl">
+                <div class="well ng-scope">
+                    <div class="tabbable tabs-left">
+                        <ul class="nav nav-tabs" id="multipageTab">
+                            <li class="active">
+                                <a href="#viewTab1" data-toggle="tab" ng-click="gotoView1()">
+                                    <span class="badge badge-warning">Page 1</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#viewTab2" data-toggle="tab" ng-click="gotoView2()" id="multiPageMiddleTab">
+                                    <span class="badge badge-important">Page 2</span>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#viewTab3" data-toggle="tab" ng-click="gotoView3()">
+                                    <span class="badge badge-info">Page 3</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <!-- Multi Page 1 -->
+                            <div class="tab-pane active" id="viewTab1">
+                                <p>
+                                    <div style="visibility: hidden; display: none;">
+                                        <div ng-view></div>
+                                    </div>
+                                    <div app-run="page1.html" module="page1"></div>
+                                </p>
+                            </div>
+
+                            <!-- Multi Page 2-->
+                            <div class="tab-pane" id="viewTab2">
+                                <p>
+                                    <div style="visibility: hidden; display: none;">
+                                        <div ng-view></div>
+                                    </div>
+                                    <div app-run="page2.html" module="page2"></div>
+                                </p>
+                            </div>
+
+                            <!-- Multi Page 3-->
+                            <div class="tab-pane" id="viewTab3">
+                                <p>
+                                    <div style="visibility: hidden; display: none;">
+                                        <div ng-view></div>
+                                    </div>
+                                    <div app-run="page3.html" module="page3"></div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 1 -->
+    <section id="page1section">
+        <div class="page-header">
+            <h1>Page 1
+                <small>Play with me :)</small>
+            </h1>
+        </div>
+        <div class="row">
+            <!-- page 1 code -->
+            <div class="span5">
+                <span hint></span>
+
+                <div class="tabs-spacer"></div>
+                <div app-run="page1.html" class="well" module="page1"></div>
+            </div>
+
+            <!-- page 1 docs -->
+            <div class="span7 app-source" app-source="page1.html page1.js" annotate="page1.annotation" module="page1">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 2 -->
+    <section id="page2section">
+        <div class="page-header">
+            <h1>Page 2
+                <small>Cool yeah? :D</small>
+            </h1>
+        </div>
+        <div class="row">
+            <!-- page 2 code -->
+            <div class="span5">
+                <span hint></span>
+
+                <div class="tabs-spacer"></div>
+                <div app-run="page2.html" class="well" module="page2"></div>
+            </div>
+
+            <!-- page 2 docs -->
+            <div class="span7 app-source" app-source="page2.html page2.js" annotate="page2.annotation" module="page2">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 3 -->
+    <section id="page3section">
+        <div class="page-header">
+            <h1>Page 3
+                <small>Hope you liked it 8-)</small>
+            </h1>
+        </div>
+        <div class="row">
+            <!-- page 3 code -->
+            <div class="span5">
+                <span hint></span>
+
+                <div class="tabs-spacer"></div>
+                <div app-run="page3.html" class="well" module="page3"></div>
+            </div>
+
+            <!-- page 3 docs -->
+            <div class="span7 app-source" app-source="page3.html page3.js" annotate="page3.annotation" module="page3">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="pull-right"><a class="label label-info" href="#">Back to top</a></p>
+
+        <p>Javascript <a href="http://twitter.com/h4ckathon" target="_blank">@h4ckathon</a> Challenge Implementation by
+            <a href="http://twitter.com/markenranosa" target="_blank">@markenranosa</a>.
+        </p>
+
+        <p>Powered by bootstrap, glyphicons, angular...... and sadly jquery</p>
+    </footer>
+
+</div>
+
+<!-- JavaScript at the bottom for fast page loading -->
+<script src="lib/jquery/jquery.js"></script>
+<script src="lib/jquery/mask.js"></script>
+<script src="lib/bootstrap/bootstrap.min.js"></script>
+<script src="lib/prettify/prettify.js"></script>
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular/angular-resource.js"></script>
+<script src="js/app.js"></script>
+<script src="js/services.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/directives.js"></script>
+<script src="js/application.js"></script>
+<!-- end scripts -->
+<div class="page1-code">
+    <!-- ============== Page 1 ============== -->
+
+    <script id="page1.js">
+        var page1Module = angular.module('page1', ['hackApp.filters']);
+
+        function PageOneCtrl($scope) {
+            $scope.pageOneShowAll = false;
+
+            $scope.states = ["Alabama", "Alaska", "Arizona", "Arkansas",
+                "California", "Colorado", "Connecticut", "Delaware", "Florida",
+                "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa",
+                "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland",
+                "Massachusetts", "Michigan", "Minnesota", "Mississippi",
+                "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire",
+                "New Jersey", "New Mexico", "New York", "North Dakota",
+                "North Carolina", "Ohio", "Oklahoma", "Oregon", "Pennsylvania",
+                "Rhode Island", "South Carolina", "South Dakota", "Tennessee",
+                "Texas", "Utah", "Vermont", "Virginia", "Washington",
+                "West Virginia", "Wisconsin", "Wyoming"];
+
+            $scope.countries = ["Afghanistan","Albania","Algeria","Andorra",
+                "Angola","Antigua and Barbuda","Argentina","Armenia",
+                "Australia","Austria","Azerbaijan","Bahamas","Bahrain",
+                "Bangladesh","Barbados","Belarus","Belgium","Belize",
+                "Benin","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana",
+                "Brazil","Brunei","Bulgaria","Burkina Faso",
+                "Burundi","Cambodia","Cameroon","Canada","Cape Verde",
+                "Central African Republic","Chad","Chile","China","Colombi",
+                "Comoros","Congo (Brazzaville)","Congo","Costa Rica",
+                "Cote d'Ivoire","Croatia","Cuba","Cyprus","Czech Republic",
+                "Denmark","Djibouti","Dominica","Dominican Republic",
+                "East Timor (Timor Timur)","Ecuador","Egypt","El Salvador",
+                "Equatorial Guinea","Eritrea","Estonia","Ethiopia","Fiji",
+                "Finland","France","Gabon","Gambia, The","Georgia",
+                "Germany","Ghana","Greece","Grenada","Guatemala","Guinea",
+                "Guinea-Bissau","Guyana","Haiti","Honduras","Hungary",
+                "Iceland","India","Indonesia","Iran","Iraq","Ireland",
+                "Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan",
+                "Kenya","Kiribati","Korea, North","Korea, South","Kuwait",
+                "Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho",
+                "Liberia","Libya","Liechtenstein","Lithuania","Luxembourg",
+                "Macedonia","Madagascar","Malawi","Malaysia",
+                "Maldives","Mali","Malta","Marshall Islands","Mauritania",
+                "Mauritius","Mexico","Micronesia","Moldova","Monaco",
+                "Mongolia","Morocco","Mozambique","Myanmar","Namibia","Nauru",
+                "Nepa","Netherlands","New Zealand","Nicaragua","Niger",
+                "Nigeria","Norway","Oman","Pakistan","Palau","Panama",
+                "Papua New Guinea","Paraguay","Peru","Philippines","Poland",
+                "Portugal","Qatar","Romania","Russia","Rwanda",
+                "Saint Kitts and Nevis","Saint Lucia","Saint Vincent","Samoa",
+                "San Marino","Sao Tome and Principe","Saudi Arabia","Senegal",
+                "Serbia and Montenegro","Seychelles","Sierra Leone",
+                "Singapore","Slovakia","Slovenia","Solomon Islands","Somalia",
+                "South Africa","Spain","Sri Lanka","Sudan","Suriname",
+                "Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan",
+                "Tanzania","Thailand","Togo","Tonga","Trinidad and Tobago",
+                "Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine",
+                "United Arab Emirates","United Kingdom","United States",
+                "Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela",
+                "Vietnam","Yemen","Zambia","Zimbabwe"];
+
+            $scope.persistPageOne = function() {
+                alert("Save Me!");
+            };
+
+            $scope.togglePageOneShowAll = function() {
+                if($scope.pageOneShowAll)
+                    $scope.pageOneShowAll = false;
+                else
+                    $scope.pageOneShowAll = true;
+            };
+
+            $scope.clearPageOne = function() {
+                $scope.firstName = "";
+                $scope.lastName = "";
+                $scope.streetAddress = "";
+                $scope.suburb = "";
+                $scope.state = "";
+                $scope.postcode = "";
+                $scope.country = "";
+                $scope.email = "";
+                $scope.phone = "";
+            };
+
+            // jquery T_T the shivers of dirty dom code
+            //$('.show-all').popover('show');
+
+        }
+    </script>
+
+    <script type="text/ng-template" id="page1.html">
+        <div ng-controller="PageOneCtrl">
+            <form class="form-horizontal css-form" name="pageOneForm">
+                <div class="alert alert-error" ng-show="pageOneForm.email.$error.email">
+                    <a class="close" data-dismiss="alert" href="#">×</a>
+                    <strong class="alert-heading">ERROR : </strong>
+                    Email looks like this foo@you.com!
+                </div>
+                <div class="alert alert-success" ng-show="pageOneForm.$valid">
+                    <a class="close" data-dismiss="alert" href="#">×</a>
+                    <strong class="alert-heading">SUCCESS : </strong>
+                    All is good. Just click save
+                </div>
+                <div class="alert alert-info"
+                     ng-hide="pageOneForm.$valid || pageOneForm.email.$error.email">
+                    <a class="close" data-dismiss="alert" href="#">×</a>
+                    <strong class="alert-heading">INFO : </strong>
+                    Fill em up!
+                </div>
+                <fieldset>
+                    <legend>
+                        <img src="img/facebook.png" height="47px" width="47px">
+                        Personal Details
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a class="btn btn-info show-all right" href="#page1"
+                           data-content="Click to hide or show non-required fields."
+                           data-original-title="Show All"
+                           data-toggle="button"
+                           ng-click="togglePageOneShowAll()">
+                            <i class="icon-eye-open icon-white"></i>
+                        </a>
+                    </legend>
+
+                    <div class="control-group
+                    {{pageOneForm.firstName.$valid | valid}}">
+                        <label class="control-label">First Name :</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">
+                                    <i class="icon-user"></i>
+                                </span><input type="text" id="input_01" name="firstName"
+                                              ng-model="firstName" required class="span2">
+                            </div>
+                            <span ng-show="pageOneForm.firstName.$valid">
+                                <a class="btn btn-success disabled" href="#">
+                                    <i class="icon-ok icon-white"></i>
+                                </a>
+                            </span>
+                            <span ng-show="pageOneForm.firstName.$error.required">
+                                <a class="btn btn-info input-info disabled" href="#"
+                                   data-content="This field is required."
+                                   data-original-title="Info">
+                                    <i class="icon-info-sign icon-white"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="control-group {{pageOneForm.lastName.$valid | valid}}">
+                        <label class="control-label">Last Name :</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">
+                                    <i class="icon-book"></i>
+                                </span><input type="text" id="input_02" name="lastName"
+                                              ng-model="lastName" required class="span2">
+                            </div>
+                            <span ng-show="pageOneForm.lastName.$valid">
+                                <a class="btn btn-success disabled" href="#">
+                                    <i class="icon-ok icon-white"></i>
+                                </a>
+                            </span>
+                            <span ng-show="pageOneForm.lastName.$error.required">
+                                <a class="btn btn-info input-info disabled" href="#"
+                                   data-content="This field is required."
+                                   data-original-title="Info">
+                                    <i class="icon-info-sign icon-white"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="control-group {{streetAddress | notempty}}"
+                         ng-show="pageOneShowAll">
+                        <label class="control-label">Street Address :</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">
+                                    <i class="icon-home"></i>
+                                </span><input type="text" id="input_03"
+                                    name="streetAddress" ng-model="streetAddress"
+                                    class="span2">
+                            </div>
+                            <span ng-show="streetAddress | notemptyboolean">
+                                <a class="btn btn-success disabled" href="#">
+                                    <i class="icon-ok icon-white"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="control-group {{suburb | notempty}}"
+                         ng-show="pageOneShowAll">
+                        <label class="control-label">Suburb :</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">
+                                    <i class="icon-road"></i>
+                                </span><input type="text" id="input_04" name="suburb"
+                                              ng-model="suburb" class="span2">
+                            </div>
+                            <span ng-show="suburb | notemptyboolean">
+                                <a class="btn btn-success disabled" href="#">
+                                    <i class="icon-ok icon-white"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="control-group {{state | notempty}}"
+                         ng-show="pageOneShowAll">
+                        <label class="control-label">State/Province :</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">
+                                    <i class="icon-plane"></i>
+                                </span><input type="text" id="input_05" name="state"
+                                              ng-model="state" data-provide="typeahead"
+                                              data-items="4" data-source='{{states}}'
+                                              class="span2">
+                            </div>
+                            <span ng-show="state | notemptyboolean">
+                                <a class="btn btn-success disabled" href="#">
+                                    <i class="icon-ok icon-white"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="control-group {{postcode | notempty}}"
+                         ng-show="pageOneShowAll">
+                        <label class="control-label">Postcode :</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">
+                                    <i class="icon-map-marker"></i>
+                                </span><input type="text" id="input_06" name="postcode"
+                                              ng-model="postcode" class="span2">
+                            </div>
+                            <span ng-show="postcode | notemptyboolean">
+                                <a class="btn btn-success disabled" href="#">
+                                    <i class="icon-ok icon-white"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="control-group {{pageOneForm.country.$valid | valid}}">
+                        <label class="control-label">Country :</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">
+                                    <i class="icon-globe"></i>
+                                </span><input type="text" id="input_07" name="country"
+                                              ng-model="country" data-provide="typeahead"
+                                              data-items="4" data-source='{{countries}}'
+                                              required class="span2">
+                            </div>
+                            <span ng-show="pageOneForm.country.$valid">
+                                <a class="btn btn-success disabled" href="#">
+                                    <i class="icon-ok icon-white"></i>
+                                </a>
+                            </span>
+                            <span ng-show="pageOneForm.country.$error.required">
+                                <a class="btn btn-info input-info disabled" href="#"
+                                   data-content="This field is required."
+                                   data-original-title="Info">
+                                    <i class="icon-info-sign icon-white"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="control-group {{pageOneForm.email.$error.email | error}}
+                                                {{pageOneForm.email.$valid | valid}}">
+                        <label class="control-label">Email :</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">
+                                    <i class="icon-envelope"></i>
+                                </span><input type="email" id="input_08" name="email"
+                                              ng-model="email" required class="span2"/>
+                            </div>
+                            <span ng-show="pageOneForm.email.$valid">
+                                <a class="btn btn-success disabled" href="#">
+                                    <i class="icon-ok icon-white"></i>
+                                </a>
+                            </span>
+                            <span ng-show="pageOneForm.email.$error.required">
+                                <a class="btn btn-info input-info disabled" href="#"
+                                   data-content="This field is required."
+                                   data-original-title="Info">
+                                    <i class="icon-info-sign icon-white"></i>
+                                </a>
+                            </span>
+                            <span ng-show="pageOneForm.email.$error.email">
+                                <a class="btn btn-danger hack-input-email
+                                input-info disabled" href="#"
+                                   data-content="This is not a valid email"
+                                   data-original-title="Error">
+                                    <i class="icon-exclamation-sign icon-white"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="control-group {{phone | notempty}}"
+                         ng-show="pageOneShowAll">
+                        <label class="control-label">Phone Number :</label>
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">
+                                    <i class="icon-thumbs-up"></i>
+                                </span><input type="text" id="input_09" name="phone"
+                                              ng-model="phone" class="span2">
+                            </div>
+                            <span ng-show="phone | notemptyboolean">
+                                <a class="btn btn-success disabled" href="#">
+                                    <i class="icon-ok icon-white"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-actions" ng-show="pageOneForm.$valid">
+                        <a type="submit" class="btn btn-primary"
+                           ng-click="persistPageOne()">
+                            <i class="icon-folder-open icon-white"></i>
+                            Save changes
+                        </a>
+                        <a class="btn" ng-click="clearPageOne()">
+                            <i class="icon-remove"></i>
+                            Cancel
+                        </a>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="page1.annotation">
+        {
+            "page1.html": {
+                "ng-app": "Tells AngularJS to be active in this portion of the page. In this case the entire document.",
+                "page1": "The <code>ng-app</code> activates the <code>page1</code> module for this page region. This lets you have modules that run in different parts of the page.",
+                "angular-1.0.0rc10.min.js": "Load AngularJS.",
+                "ng-controller": "The behavior of content under this element will be managed using the <code>PageOneCtrl</code> class defined in <code>page1.js</code>.",
+                "page1.js": "Your behavior lives in JavaScript controllers.",
+                "nbsp": "Never",
+                "nbsp": "gonna",
+                "nbsp": "give",
+                "nbsp": "you",
+                "nbsp": "up!",
+                "nbsp": "Never",
+                "nbsp": "gonna",
+                "nbsp": "let",
+                "nbsp": "you",
+                "nbsp": "down.",
+                "nbsp": "Never",
+                "nbsp": "gonna",
+                "nbsp": "run",
+                "nbsp": "around",
+                "nbsp": "and",
+                "nbsp": "desert",
+                "nbsp": "you!",
+                "nbsp": "Never",
+                "nbsp": "gonna",
+                "nbsp": "make",
+                "nbsp": "you",
+                "nbsp": "cry",
+                "nbsp": ":3",
+                "nbsp": ":p",
+                "nbsp": "8D",
+                "nbsp": ":)",
+                "ng-click": "Instead of registering event-handlers, you declare which method on the controller to call.",
+                "ng-model": "This links the form and the model. This means that any changes to the control update the data in your model, and when you change the model it updates the control.",
+                "{{pageOneForm.firstName.$valid | valid}}": "The <code>{{ }}</code> are a declarative way of specifying data binding locations in the HTML. AngularJS will automatically update this text whenever the <code>pageOneForm.firstName.$valid</code> property changes."
+            },
+            "page1.js": {
+                "angular.module": "Initializes the module.",
+                "hackApp.filters": "Module dependecies.",
+                "$scope": "<code>$scope</code> contains your model data. It is the glue between the controller and the view. The <code>$scope</code> is just one of the services that can be injected into the controller.",
+                "PageOneCtrl": "The controller is the code behind the view.",
+                "pageOneShowAll": "Flag if all items in form will be shown.",
+                "states": "List of states",
+                "countries": "List of countries",
+                "persistPageOne": "Persistence service/implementation will be done here",
+                "togglePageOneShowAll": "Switches show all value to on and off",
+                "clearPageOne": "Dirty way of clearing the form, there is no way yet to set it into its pristine state"
+            }
+        }
+    </script>
+</div>
+
+<div class="page2-code">
+    <!-- ============== Page 2 ============== -->
+
+    <script id="page2.js">
+        var page2Module = angular.module('page2', ['hackApp.filters']);
+
+        function PageTwoCtrl($scope) {
+            $scope.topics = [
+                {name : "Topic A", selected : false},
+                {name : "Topic B", selected : false},
+                {name : "Topic C", selected : false},
+                {name : "Topic D", selected : false}
+            ];
+
+            $scope.hobbies = [
+                {name : "Hobby A", selected : false},
+                {name : "Hobby B", selected : false},
+                {name : "Hobby C", selected : false}
+            ];
+
+            $scope.products = [
+                {name : "Product A", selected : false},
+                {name : "Product B", selected : false},
+                {name : "Product C", selected : false}
+            ];
+
+            $scope.testMe = function(topic) {
+                topic.selected ? topic.selected = false : topic.selected = true;
+            };
+
+        }
+    </script>
+
+    <script type="text/ng-template" id="page2.html">
+        <div ng-controller="PageTwoCtrl">
+            <form class="form-horizontal css-form" name="pageTwoForm">
+                <div class="alert alert-info">
+                    <a class="close" data-dismiss="alert" href="#">×</a>
+                    <strong class="alert-heading">INFO : </strong>
+                    Just select and go :)
+                </div>
+                <fieldset>
+                    <legend>
+                        <img src="img/lastfm.png" height="47px" width="47px">
+                        Interests
+                    </legend>
+
+                    <div class="control-group">
+                        <label class="control-label">Topics :</label>
+                        <div class="controls">
+                            <div ng-repeat="topic in topics">
+                                <div class="alert {{topic.selected | selectme}} span2">
+                                    <a ng-click="testMe(topic)"
+                                       class="btn {{topic.selected | buttonme}}"
+                                       data-toggle="button">
+                                        <i class="{{topic.selected | iconme}}"></i>
+                                    </a>
+
+                                    <strong>{{topic.name}}</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">Hobbies :</label>
+                        <div class="controls">
+                            <div ng-repeat="hobby in hobbies">
+                                <div class="alert {{hobby.selected | selectme}} span2">
+                                    <a ng-click="testMe(hobby)"
+                                       class="btn {{hobby.selected | buttonme}}"
+                                       data-toggle="button">
+                                        <i class="{{hobby.selected | iconme}}"></i>
+                                    </a>
+
+                                    <strong>{{hobby.name}}</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>
+                        <img src="img/delicious.png" height="47px" width="47px">
+                        Product Selection
+                    </legend>
+
+                    <!-- Products -->
+                    <div class="control-group">
+                        <label class="control-label">Products :</label>
+                        <div class="controls">
+                            <div class="btn-group" data-toggle="buttons-radio">
+                                <button class="btn span1 btn-info">A</button>
+                                <button class="btn span1 btn-info">B</button>
+                                <button class="btn span1 btn-info">C</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <div class="form-actions">
+                    <a type="submit" class="btn btn-primary"
+                       ng-click="persistPageTwo()">
+                        <i class="icon-folder-open icon-white"></i>
+                        Save changes
+                    </a>
+                    <a class="btn" ng-click="clearPageTwo()">
+                        <i class="icon-remove"></i>
+                        Cancel
+                    </a>
+                </div>
+            </form>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="page2.annotation">
+        {
+            "page2.html": {
+                "ng-app": "Tells AngularJS to be active in this portion of the page. In this case the entire document.",
+                "page2": "The <code>ng-app</code> activates the <code>page2</code> module for this page region. This lets you have modules that run in different parts of the page.",
+                "angular-1.0.0rc10.min.js": "Load AngularJS.",
+                "ng-controller": "The behavior of content under this element will be managed using the <code>PageTwoCtrl</code> class defined in <code>page2.js</code>.",
+                "page2.js": "Your behavior lives in JavaScript controllers.",
+                "ng-click": "Instead of registering event-handlers, you declare which method on the controller to call.",
+                "ng-model": "This links the form and the model. This means that any changes to the control update the data in your model, and when you change the model it updates the control.",
+                "{{topic.selected | selectme}}": "The <code>{{ }}</code> are a declarative way of specifying data binding locations in the HTML. AngularJS will automatically update this text whenever the <code>topic.selected</code> property changes.",
+                "ng-repeat": "Use <code>ng-repeat</code> to unroll a collection."
+            },
+            "page2.js": {
+                "angular.module": "Initializes the module.",
+                "hackApp.filters": "Module dependecies.",
+                "$scope": "<code>$scope</code> contains your model data. It is the glue between the controller and the view. The <code>$scope</code> is just one of the services that can be injected into the controller.",
+                "PageTwoCtrl": "The controller is the code behind the view.",
+                "topics": "List of topics",
+                "hobbies": "List of hobbies",
+                "products": "List of products",
+                "testMe": "Toggles current <code>topic.selected</code> value"
+            }
+        }
+    </script>
+</div>
+
+<div class="page3-code">
+    <!-- ============== Page 3 ============== -->
+
+    <script id="page3.js">
+        var page3Module = angular.module('page3', ['hackApp.filters']);
+
+        function PageThreeCtrl($scope) {
+
+        }
+    </script>
+
+    <script type="text/ng-template" id="page3.html">
+        <div ng-controller="PageThreeCtrl">
+            <form class="form-horizontal css-form" name="pageThreeForm">
+                <div class="alert alert-success" ng-show="pageThreeForm.$valid">
+                    <a class="close" data-dismiss="alert" href="#">×</a>
+                    <strong class="alert-heading">SUCCESS : </strong>
+                    All is good. Just click save
+                </div>
+                <div class="alert alert-info" ng-hide="pageThreeForm.$valid">
+                    <a class="close" data-dismiss="alert" href="#">×</a>
+                    <strong class="alert-heading">INFO : </strong>
+                    Fill em up!
+                </div>
+                <fieldset>
+                    <legend>
+                        <img src="img/skype.png" height="47px" width="47px">
+                        Payment
+                    </legend>
+                    <div class="control-group {{pageThreeForm.cardNum.$valid | valid}}">
+                        <label class="control-label">Credit Card Number :</label>
+
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">
+                                    <i class="icon-edit"></i>
+                                </span><input type="text" id="input15" name="cardNum"
+                                    ng-model="cardNum"  required class="span2">
+                            </div>
+                            <span ng-show="pageThreeForm.cardNum.$valid">
+                                <a class="btn btn-success disabled" href="#">
+                                    <i class="icon-ok icon-white"></i>
+                                </a>
+                            </span>
+                            <span ng-show="pageThreeForm.cardNum.$error.required">
+                                <a class="btn btn-info input-info disabled" href="#"
+                                   data-content="This field is required."
+                                   data-original-title="Info">
+                                    <i class="icon-info-sign icon-white"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="control-group {{pageThreeForm.ccv.$valid | valid}}">
+                        <label class="control-label">CCV :</label>
+
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">
+                                    <i class="icon-check"></i>
+                                </span><input type="text" id="input16" name="ccv"
+                                    ng-model="ccv" required class="span1">
+                            </div>
+                            <span ng-show="pageThreeForm.ccv.$valid">
+                                <a class="btn btn-success disabled" href="#">
+                                    <i class="icon-ok icon-white"></i>
+                                </a>
+                            </span>
+                            <span ng-show="pageThreeForm.ccv.$error.required">
+                                <a class="btn btn-info input-info disabled" href="#"
+                                   data-content="This field is required."
+                                   data-original-title="Info">
+                                    <i class="icon-info-sign icon-white"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="control-group {{pageThreeForm.cardName.$valid | valid}}">
+                        <label class="control-label">Credit Card Name :</label>
+
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <span class="add-on">
+                                    <i class="icon-pencil"></i>
+                                </span><input type="text" id="input17"
+                                    name="cardName" ng-model="cardName"
+                                    required class="span2">
+                            </div>
+                            <span ng-show="pageThreeForm.cardName.$valid">
+                                <a class="btn btn-success disabled" href="#">
+                                    <i class="icon-ok icon-white"></i>
+                                </a>
+                            </span>
+                            <span ng-show="pageThreeForm.cardName.$error.required">
+                                <a class="btn btn-info input-info disabled" href="#"
+                                   data-content="This field is required."
+                                   data-original-title="Info">
+                                    <i class="icon-info-sign icon-white"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="control-group {{pageThreeForm.amount.$valid | valid}}">
+                        <label class="control-label">Amount :</label>
+
+                        <div class="controls">
+                            <div class="input-prepend input-append">
+                                <span class="add-on">$</span><input
+                                    type="text" id="input18" name="amount"
+                                    ng-model="amount"
+                                    required class="span2"><span
+                                    class="add-on">.00</span>
+                            </div>
+                            <span ng-show="pageThreeForm.amount.$valid">
+                                <a class="btn btn-success disabled" href="#">
+                                    <i class="icon-ok icon-white"></i>
+                                </a>
+                            </span>
+                            <span ng-show="pageThreeForm.amount.$error.required">
+                                <a class="btn btn-info input-info disabled" href="#"
+                                   data-content="This field is required."
+                                   data-original-title="Info">
+                                    <i class="icon-info-sign icon-white"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions" ng-show="pageThreeForm.$valid">
+                        <a type="submit" class="btn btn-primary"
+                           ng-click="persistPageThree()">
+                            <i class="icon-folder-open icon-white"></i>
+                            Save changes
+                        </a>
+                        <a class="btn" ng-click="clearPageThree()">
+                            <i class="icon-remove"></i>
+                            Cancel
+                        </a>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="page3.annotation">
+        {
+            "page3.html": {
+                "ng-app": "Tells AngularJS to be active in this portion of the page. In this case the entire document.",
+                "page3": "The <code>ng-app</code> activates the <code>page3</code> module for this page region. This lets you have modules that run in different parts of the page.",
+                "angular-1.0.0rc10.min.js": "Load AngularJS.",
+                "ng-controller": "The behavior of content under this element will be managed using the <code>PageThreeCtrl</code> class defined in <code>page3.js</code>.",
+                "page3.js": "Your behavior lives in JavaScript controllers.",
+                "ng-click": "Instead of registering event-handlers, you declare which method on the controller to call.",
+                "ng-model": "This links the form and the model. This means that any changes to the control update the data in your model, and when you change the model it updates the control.",
+                "{{pageThreeForm.cardNum.$valid | valid}}": "The <code>{{ }}</code> are a declarative way of specifying data binding locations in the HTML. AngularJS will automatically update this text whenever the <code>pageThreeForm.cardNum.$valid</code> property changes."
+            },
+            "page3.js": {
+                "angular.module": "Initializes the module.",
+                "hackApp.filters": "Module dependecies.",
+                "$scope": "<code>$scope</code> contains your model data. It is the glue between the controller and the view. The <code>$scope</code> is just one of the services that can be injected into the controller.",
+                "PageThreeCtrl": "The controller is the code behind the view."
+            }
+        }
+    </script>
+</div>
+
+<script>
+    $(document).ready(function () {
+        //popovers
+        $(".nocode").popover();
+        $(".input-info").popover();
+        $(".show-all").popover();
+
+        //infos
+        $('.input-info').click(function (e) {
+            e.preventDefault();
+        });
+        $('.btn-success').click(function (e) {
+            e.preventDefault();
+        });
+        $('.show-all').click(function (e) {
+            e.preventDefault();
+        });
+
+        //mask TODO - make this work its breaking my toys :(
+        /*
+        $("#input_06").mask("999999", {placeholder:" "});
+        $("#input_09").mask("(999) 999-9999", {placeholder:" "});
+        $("#input15").mask("9999-9999-9999-9999", {placeholder:" "});
+        $("#input16").mask("9999", {placeholder:" "});
+        $("#input18").mask("99999999999999999.99999999", {placeholder:" "});*/
+    });
+</script>
+
+</body>
+</html>

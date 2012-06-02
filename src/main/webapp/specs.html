@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>H4ckathon Javascript Challenge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/docs.css" rel="stylesheet">
+    <link href="css/prettify.css" rel="stylesheet">
+  <style>
+    [ng-cloak] {
+      display: none;
+    }
+  </style>
+  <script>
+    // include angular loader, which allows the files to load in any order
+    /*
+     AngularJS v1.0.0rc1
+     (c) 2010-2012 AngularJS http://angularjs.org
+     License: MIT
+    */
+    'use strict';(function(i){function d(c,a,e){return c[a]||(c[a]=e())}return d(d(i,"angular",Object),"module",function(){var c={};return function(a,e,f){e&&c.hasOwnProperty(a)&&(c[a]=null);return d(c,a,function(){function b(a,b,d){return function(){c[d||"push"]([a,b,arguments]);return g}}if(!e)throw Error("No module: "+a);var c=[],d=[],h=b("$injector","invoke"),g={_invokeQueue:c,_runBlocks:d,requires:e,name:a,provider:b("$provide","provider"),factory:b("$provide","factory"),service:b("$provide","service"),
+    value:b("$provide","value"),constant:b("$provide","constant","unshift"),filter:b("$filterProvider","register"),directive:b("$compileProvider","directive"),config:h,run:function(a){d.push(a);return this}};f&&h(f);return g})}})})(window);
+
+    // include a third-party async loader library
+    /*!
+     * $script.js v1.3
+     * https://github.com/ded/script.js
+     * Copyright: @ded & @fat - Dustin Diaz, Jacob Thornton 2011
+     * Follow our software http://twitter.com/dedfat
+     * License: MIT
+     */
+    !function(a,b,c){function t(a,c){var e=b.createElement("script"),f=j;e.onload=e.onerror=e[o]=function(){e[m]&&!/^c|loade/.test(e[m])||f||(e.onload=e[o]=null,f=1,c())},e.async=1,e.src=a,d.insertBefore(e,d.firstChild)}function q(a,b){p(a,function(a){return!b(a)})}var d=b.getElementsByTagName("head")[0],e={},f={},g={},h={},i="string",j=!1,k="push",l="DOMContentLoaded",m="readyState",n="addEventListener",o="onreadystatechange",p=function(a,b){for(var c=0,d=a.length;c<d;++c)if(!b(a[c]))return j;return 1};!b[m]&&b[n]&&(b[n](l,function r(){b.removeEventListener(l,r,j),b[m]="complete"},j),b[m]="loading");var s=function(a,b,d){function o(){if(!--m){e[l]=1,j&&j();for(var a in g)p(a.split("|"),n)&&!q(g[a],n)&&(g[a]=[])}}function n(a){return a.call?a():e[a]}a=a[k]?a:[a];var i=b&&b.call,j=i?b:d,l=i?a.join(""):b,m=a.length;c(function(){q(a,function(a){h[a]?(l&&(f[l]=1),o()):(h[a]=1,l&&(f[l]=1),t(s.path?s.path+a+".js":a,o))})},0);return s};s.get=t,s.ready=function(a,b,c){a=a[k]?a:[a];var d=[];!q(a,function(a){e[a]||d[k](a)})&&p(a,function(a){return e[a]})?b():!function(a){g[a]=g[a]||[],g[a][k](b),c&&c(d)}(a.join("|"));return s};var u=a.$script;s.noConflict=function(){a.$script=u;return this},typeof module!="undefined"&&module.exports?module.exports=s:a.$script=s}(this,document,setTimeout)
+
+    // load all of the dependencies asynchronously.
+    $script('lib/jquery/jquery.js', function () {
+        $script('lib/bootstrap/bootstrap.min.js', function () {
+            $().dropdown();
+            bootstrap();
+        });
+        $script('lib/prettify/prettify.js', bootstrap);
+        $script('lib/angular/angular.js', bootstrap);
+        $script('lib/angular/angular-resource.js', bootstrap);
+        $script('js/application.js', bootstrap);
+
+    });
+
+    function bootstrap() {
+        if (window.prettyPrint && window.$ && $.fn.popover() && angular.bootstrap && hasModule('hackApp') && hasModule('ngResource')) {
+            $(function () {
+                // when all is done, execute bootstrap angular application
+                angular.bootstrap(document, ['hackApp']);
+            });
+        }
+    }
+
+    function hasModule(moduleName) {
+        try {
+            return angular.module(moduleName);
+        } catch (e) {
+            return false;
+        }
+    }
+  </script>
+  <script>
+        /*
+         AngularJS v1.0.0rc7
+         (c) 2010-2012 AngularJS http://angularjs.org
+         License: MIT
+         */
+        (function(i){'use strict';function d(c,b,e){return c[b]||(c[b]=e())}return d(d(i,"angular",Object),"module",function(){var c={};return function(b,e,f){e&&c.hasOwnProperty(b)&&(c[b]=null);return d(c,b,function(){function a(a,b,d){return function(){c[d||"push"]([a,b,arguments]);return g}}if(!e)throw Error("No module: "+b);var c=[],d=[],h=a("$injector","invoke"),g={_invokeQueue:c,_runBlocks:d,requires:e,name:b,provider:a("$provide","provider"),factory:a("$provide","factory"),service:a("$provide","service"),
+            value:a("$provide","value"),constant:a("$provide","constant","unshift"),filter:a("$filterProvider","register"),controller:a("$controllerProvider","register"),directive:a("$compileProvider","directive"),config:h,run:function(a){d.push(a);return this}};f&&h(f);return g})}})})(window);
+  </script>
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+    <!-- Navbar -->
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="./index.html">TheForm</a>
+                <a href="./index.html" class="btn btn-danger">Kick Ass Implementation!</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Masthead -->
+        <header class="jumbotron subhead" id="overview">
+            <h1>Specification</h1>
+            <p class="lead">Details about the H4ckathon challenge.</p>
+            <div class="subnav">
+                <ul class="nav nav-pills">
+                    <li class=""><a href="#challenge">Challenge</a></li>
+                    <li class=""><a href="#scoring">Scoring</a></li>
+                    <li class=""><a href="#theform">The Form</a></li>
+                    <li class=""><a href="#delivery">Delivery</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- Challenge -->
+        <section id="challenge">
+            <div class="page-header">
+                <h1>Challenge <small>Create a multi-page form that only uses HTML and Javascript</small></h1>
+            </div>
+            <div class="row">
+                <div class="span6">
+                    <p>You will demonstrate the following Javasrcipt functions with this form-</p>
+                    <ul class="">
+                        <li class="">
+                            Saving of inputted data upon refresh of page / Session handling
+                        </li>
+                        <li class="">
+                            Error validation on each field
+                        </li>
+                        <li class="">
+                            Being able to use the back/forward button of the browser to navigate through the form
+                        </li>
+                        <li class="">
+                            Additional functions applied to the form to have it user friendly
+                        </li>
+                    </ul>
+                </div>
+                <div class="span6">
+                    <p>Your HTML will demonstrate the following-</p>
+                    <ul class="">
+                        <li class="">
+                            A clean and simple design with user-friendliness the priority
+                        </li>
+                        <li class="">
+                            HTML5/CSS3 markup
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scoring -->
+        <section id="scoring">
+            <div class="page-header">
+                <h1>Scoring <small>80 total score points baby</small></h1>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <p>You will be rated out of 10 for each of the 6 items above. (Total 60 points)</p>
+                    <p>You will be scored out of 20 for your documentation. (Total 20 points)</p>
+                    <p>You will be penalised if your code/design looks at all similar with a competitors.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Form -->
+        <section id="theform">
+            <div class="page-header">
+                <h1>The Form <small>Create this, make it kick ass and you win!</small></h1>
+            </div>
+            <div class="row">
+                <div class="span4">
+                    <h3>Page 1:</h3>
+                    <p>Personal Details</p>
+                    <ul>
+                        <li class="">First Name</li>
+                        <li class="">Last Name</li>
+                        <li class="">Street Address</li>
+                        <li class="">Suburb</li>
+                        <li class="">State/Province</li>
+                        <li class="">Postcode</li>
+                        <li class="">Country</li>
+                        <li class="">Email</li>
+                        <li class="">Phone Number</li>
+                    </ul>
+                </div>
+                <div class="span4">
+                    <h3>Page 2:</h3>
+                    <p>Interests</p>
+                    <ul>
+                        <li class="">Web Design topics</li>
+                        <li class="">Hobbies</li>
+                    </ul>
+                    <p>Product Selection</p>
+                    <ul>
+                        <li class="">Product A</li>
+                        <li class="">Product B</li>
+                        <li class="">Product C</li>
+                    </ul>
+                </div>
+                <div class="span4">
+                    <h3>Page 3:</h3>
+                    <p>Payment</p>
+                    <ul>
+                        <li class="">Credit Card Number</li>
+                        <li class="">CCV</li>
+                        <li class="">Credit Card Name</li>
+                        <li class="">Amount</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Delivery -->
+        <section id="delivery">
+            <div class="page-header">
+                <h1>Delivery <small>Deadline deadline deadline</small></h1>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <p>Send your form in a zipped format to legazpicity@h4ckathon.com by 12nn, June 2nd.</p>
+                    <p>Winners will be announced June 9th.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="pull-right"><a class="label label-info" href="#">Back to top</a></p>
+
+            <p>Javascript <a href="http://twitter.com/h4ckathon" target="_blank">@h4ckathon</a> Challenge Implementation by
+                <a href="http://twitter.com/markenranosa" target="_blank">@markenranosa</a>.
+            </p>
+
+            <p>Powered by bootstrap, glyphicons, angular...... and sadly jquery</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
